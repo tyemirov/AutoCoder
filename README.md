@@ -2,80 +2,90 @@
 
 AutoCoder is a set of techniques for leveraging autonomous coding agents.
 
-This repository contains a set of files that can be dropped into a project to improve the automated workflow of coding agents.
+This repository contains files that can be dropped into a project to improve the automated workflow of coding agents. It builds guardrails and techniques to produce meaningful, confident code, and to avoid “AI slop.”
 
 ![coding agents](GIS%20typing.png)
 
 ## Assumptions
 
-1. There is both a local and a remote repository (GitHub or similar).
+1. Both a local and a remote repository exist (GitHub or similar).
 2. As of 10/26/2025, the sufficiently powerful autonomous agents are [Gemini CLI](https://github.com/google-gemini/gemini-cli), [Codex CLI](https://developers.openai.com/codex/cli/), and [Claude Code](https://github.com/anthropics/claude-code). One or more of these can be used for autonomous coding.
 3. The repository follows standard coding practices, such as maintaining a `.gitignore`, a `CHANGELOG.md`, and a comprehensive `README.md`.
 
 ## Human Flow
 
 1. Add [AGENTS.md](./AGENTS.md), [ISSUES.md](./ISSUES.md), [NOTES.md](./NOTES.md), and [POLICY.md](./POLICY.md) to your repository. Replace angular bracketed placeholders with real values.
-2. Add `PLAN.md` to `.gitignore`:  
-```shell
-   printf "\nPLAN.md\n" >> .gitignore
-```
+2. Add `PLAN.md` to `.gitignore`:
 
+   ```shell
+   printf "\nPLAN.md\n" >> .gitignore
+   ```
 3. Decide on a short ID for your repository (e.g., `GX` for GIX or `AW` for Allergy Wheel).
 4. Populate `ISSUES.md` with issues in the format `- [ ] [<ID>-<NUMBER>]`. Describe each issue in sufficient detail for a mid-level engineer to solve.
 5. Run the coding agent and prompt it with:
-```
-Read NOTES.md and work on ISSUES starting with bugs. Work autonomously.
-```
 
-## Personal observations of coding agents
+   ```
+   Read NOTES.md and work on ISSUES starting with bugs. Work autonomously.
+   ```
+
+## Personal Observations of Coding Agents
 
 ### Claude Code
 
-**Pro**
-- Claude Code has the most responsive and warm personality.
-- The speed of execution is fast.
+**Pros**
 
-**Con**
-- It's coding skills are subpar with both backend and front-end in comparison to Codex.
+* Most responsive and warm personality.
+* Fast execution speed.
 
-_Conclusion_ as of 10/27/2025: use Codex or build extra guardrails and smaller tasks for Claude.
+**Cons**
+
+* Coding skills are subpar in both backend and front-end compared to Codex.
+
+*Conclusion* (as of 10/27/2025): use Codex, or create extra guardrails and smaller tasks for Claude.
 
 ### Gemini CLI
 
-**Pro**
-- Very fast
+**Pros**
 
-**Con**
-- It doesn't follow instructions very well 
-- May perform large irrevokable changes if left unchecked.
+* Very fast.
 
-_Conclusion_ as of 10/27/2025: do not use Gemini CLI, not ready for the daily use.
+**Cons**
+
+* Does not follow instructions reliably.
+* May perform large, irrevocable changes if left unchecked.
+
+*Conclusion* (as of 10/27/2025): do not use Gemini CLI; not ready for daily use.
 
 ### Codex CLI
 
-**Pro**
-- Can autonomously work on large tasks
-- Decent understanding of the code base
-- Relentless in delivering the stated result
+**Pros**
 
-**Con**
-- Slow
-- Account usage finishes faster than stated
-- Uneven performance between models: the medium model can work great, and the high model can stumble
+* Can autonomously work on large tasks.
+* Decent understanding of the code base.
+* Relentless in delivering results.
 
-_Conclusion_ as of 10/27/2025: use Codex CLI with High model through API, consider it to be an employee that needs guidance.
+**Cons**
 
-### ISSUES.md example
+* Slow.
+* Account usage runs out faster than stated.
+* Uneven performance across models: the medium model can work well, while the high model may stumble.
+
+*Conclusion* (as of 10/27/2025): use Codex CLI with the High model through API; treat it as an employee that needs guidance.
+
+---
+
+## ISSUES.md Example
 
 ```md
 ## BugFixes (300–399)
 
-- [ ] [GN-300] Typing is sometimes blocked (can't type) or paste.  Unsure of the use case, seems haphazard. Review the code to see if you can find the potential cause
-- [ ] [GN-302] A large space is left under the markdown notes from time to time. Ensure we are aware of the real height of the note and can measure the height needed. Check with MDE if the editor we use exposes an ability to measure the text's height
-- [ ] [GN-303] The synchronization doesn't refresh. I just added a note on another device then logged in a computer where a session was already running and got no not there. When I opened the console I saw a lof of message about expired authentication.
-- [ ] [GN-304] Clicking on a note starts it for editing (expected behavior) and places the cursor in the right place but it yanks the note to the top (unexpected behavior).
-	- Solutions:
-		- Center the whole scroll around the active card. Introduce a notion of a card being active, if not already. Consider active being last selected, e.g. the card stays immobile but the feed around it moves. So a card that finished editing doesnt move but all other cards moved underneath it. 
-    - Effectively clicking on a card freezes it on the screen after moving it to the vewport. So if I click on a large renderedHTML view, I expect to get the rendered markdown view with the cursor in the place of my click, and no movement as the point of click was clearly in the view when I clicked on it
-- [ ] [GN-305] I can still see scrollers ![scroller screenshot](scroller.png). There should be no scrollers in the makrdown view.
+- [ ] [GN-300] Typing is sometimes blocked (can’t type or paste). The use case is unclear; it seems haphazard. Review the code to identify potential causes.
+- [ ] [GN-302] A large space occasionally appears under markdown notes. Ensure the note’s real height is detected and the required height is measured. Check whether MDE or the editor exposes text height measurement.
+- [ ] [GN-303] Synchronization doesn’t refresh. I added a note on another device, then logged into a computer with an already running session, and the note didn’t appear. In the console, I saw many messages about expired authentication.
+- [ ] [GN-304] Clicking on a note correctly enters edit mode and places the cursor, but unexpectedly yanks the note to the top.
+  - **Solutions:**
+    - Center the scroll around the active card. Introduce a notion of an active card (e.g., last selected). When editing ends, the card should stay fixed while others move underneath.  
+    - Effectively, clicking on a card freezes it in the viewport. For example, if I click on a large rendered HTML view, I expect to get the rendered markdown view with the cursor placed at my click, without any movement (since the click point was already in view).
+- [ ] [GN-305] Scrollers are still visible ![scroller screenshot](scroller.png). There should be no scrollers in the markdown view.
 ```
+
