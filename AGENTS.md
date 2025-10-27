@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## ns-rewrite
+## <Repo/App name>
 
-A Go-based command-line interface that renames packages. See README.md for details
+<App purpose description. What does it do>. See README.md for details
 
 ## Document Roles
 
