@@ -24,3 +24,18 @@ This repository contains a set of files that can be dropped into a project to im
 ```
 Read NOTES.md and work on ISSUES starting with bugs. Work autonomously.
 ```
+
+### ISSUES.md example
+
+```md
+## BugFixes (300–399)
+
+- [ ] [GN-300] Typing is sometimes blocked (can't type) or paste.  Unsure of the use case, seems haphazard. Review the code to see if you can find the potential cause
+- [ ] [GN-302] A large space is left under the markdown notes from time to time. Ensure we are aware of the real height of the note and can measure the height needed. Check with MDE if the editor we use exposes an ability to measure the text's height
+- [ ] [GN-303] The synchronization doesn't refresh. I just added a note on another device then logged in a computer where a session was already running and got no not there. When I opened the console I saw a lof of message about expired authentication.
+- [ ] [GN-304] Clicking on a note starts it for editing (expected behavior) and places the cursor in the right place but it yanks the note to the top (unexpected behavior).
+	- Solutions:
+		- Center the whole scroll around the active card. Introduce a notion of a card being active, if not already. Consider active being last selected, e.g. the card stays immobile but the feed around it moves. So a card that finished editing doesnt move but all other cards moved underneath it. 
+    - Effectively clicking on a card freezes it on the screen after moving it to the vewport. So if I click on a large renderedHTML view, I expect to get the rendered markdown view with the cursor in the place of my click, and no movement as the point of click was clearly in the view when I clicked on it
+- [ ] [GN-305] I can still see scrollers ![scroller screenshot](scroller.png). There should be no scrollers in the makrdown view.
+```
