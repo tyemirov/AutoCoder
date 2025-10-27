@@ -12,7 +12,7 @@ This repository contains a set of files that can be dropped into a project to im
 
 ## Human Flow
 
-1. Add [AGENTS.md](./AGENTS.md), [ISSUES.md](./ISSUES.md), [NOTES.md](./NOTES.md), and [POLICY.md](./POLICY.md) to your repository.
+1. Add [AGENTS.md](./AGENTS.md), [ISSUES.md](./ISSUES.md), [NOTES.md](./NOTES.md), and [POLICY.md](./POLICY.md) to your repository. Replace angular bracketed placeholders with real values.
 2. Add `PLAN.md` to `.gitignore`:  
 ```shell
    printf "\nPLAN.md\n" >> .gitignore
