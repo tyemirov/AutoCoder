@@ -4,13 +4,13 @@ Entries record newly discovered requests or changes, with their outcomes. No ins
 
 Each issue is formatted as `- [ ] [<ID>-<number>]`. When resolved it becomes -` [x] [<ID>-<number>]`
 
-## Features
+## Features (100-199)
 
-## Improvements
+## Improvements (200–299)
 
-## BugFixes
+## BugFixes (300–399)
 
-## Maintenance
+## Maintenance (400–499)
 
 ## Planning 
 do not work on the issues below, not ready
