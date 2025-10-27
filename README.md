@@ -4,6 +4,8 @@ AutoCoder is a set of techniques for leveraging autonomous coding agents.
 
 This repository contains a set of files that can be dropped into a project to improve the automated workflow of coding agents.
 
+![coding agents](GIS%20typing.png)
+
 ## Assumptions
 
 1. There is both a local and a remote repository (GitHub or similar).
