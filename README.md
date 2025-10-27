@@ -25,6 +25,44 @@ This repository contains a set of files that can be dropped into a project to im
 Read NOTES.md and work on ISSUES starting with bugs. Work autonomously.
 ```
 
+## Personal observations of coding agents
+
+### Claude Code
+
+**Pro**
+- Claude Code has the most responsive and warm personality.
+- The speed of execution is fast.
+
+**Con**
+- It's coding skills are subpar with both backend and front-end in comparison to Codex.
+
+_Conclusion_ as of 10/27/2025: use Codex or build extra guardrails and smaller tasks for Claude.
+
+### Gemini CLI
+
+**Pro**
+- Very fast
+
+**Con**
+- It doesn't follow instructions very well 
+- May perform large irrevokable changes if left unchecked.
+
+_Conclusion_ as of 10/27/2025: do not use Gemini CLI, not ready for the daily use.
+
+### Codex CLI
+
+**Pro**
+- Can autonomously work on large tasks
+- Decent understanding of the code base
+- Relentless in delivering the stated result
+
+**Con**
+- Slow
+- Account usage finishes faster than stated
+- Uneven performance between models: the medium model can work great, and the high model can stumble
+
+_Conclusion_ as of 10/27/2025: use Codex CLI with High model through API, consider it to be an employee that needs guidance.
+
 ### ISSUES.md example
 
 ```md
