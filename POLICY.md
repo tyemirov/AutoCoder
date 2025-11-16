@@ -8,6 +8,8 @@
 - **Narrow interfaces**: accept domain types, not loose primitives, when a domain type exists.
 - **No duplicate checks** in core; once validated, don’t re-validate.
 - Tests target **contracts/invariants**, not defensive branches.
+- Testing follows an **inverted test pyramid**: prefer high-value black-box integration tests over unit tests, which are reserved for complex invariants that are hard to cover via integration.
+- We **strive for 100% test coverage** driven primarily by integration/black-box suites that exercise observable behavior and contracts rather than internal implementation details.
 
 ---
 

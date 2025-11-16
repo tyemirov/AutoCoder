@@ -27,6 +27,14 @@ All rules for validation, error handling, invariants, and “confident programmi
 - `make lint` enforces linting rules before code review.
 - `make ci` mirrors the GitHub Actions workflow and should pass locally before opening a PR.
 
+### Testing Philosophy
+
+- Testing follows an **inverted test pyramid**: most coverage comes from high-value black-box integration and end-to-end tests, with a smaller layer of unit tests reserved for complex, hard-to-observe invariants.
+- We **strive for 100% test coverage**, achieved primarily through integration/black-box suites whose scenarios are exhaustive enough to exercise all meaningful branches and error paths.
+- For CLI and backend services, tests compile or run the real program/CLI entrypoints, capture exit codes and output (stdout/stderr, files, side effects), and assert against those observable results—not internal functions.
+- For web/UI, tests run the app and backing web server, drive flows through the browser, and assert against the rendered page, DOM state, events, and other user-visible behavior.
+- Unit tests are acceptable as **implementation guardrails**, but they are not product-level acceptance criteria and must not be the primary mechanism for achieving coverage.
+
 ## Tech Stack Guides
 
 Stack-specific instructions now live in dedicated files. Apply the relevant guide alongside the shared policies above.
