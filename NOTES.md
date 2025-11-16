@@ -16,15 +16,16 @@ Operational playbook for working in this repository. Use it to coordinate planni
 2. Review the backlog in `ISSUES.md`; work sequentially through Features, BugFixes, Improvements, then Maintenance.
 3. For the active issue, create `PLAN.md` (ignored by git) with bullet steps. Keep it updated and delete/rewrite it for the next issue.
 4. Create a new branch (per `AGENTS.GIT.md`) from the latest issue branch, not from `master`, so history stays linear.
-5. Describe the bug/feature via failing automated tests first. Run `make test` to watch them fail.
+5. Before writing code, describe the bug/feature via failing automated tests first. Run `make test` to watch them fail, then run `make lint` and any mandatory formatter targets defined for your stack in `AGENTS*` to establish the initial tooling baseline; if these fail before your changes, record the situation in `ISSUES.md`.
 6. Implement the change, keeping to stack-specific standards. Limit edits to necessary files plus `ISSUES.md` (append-only log) and `CHANGELOG.md` (post-completion summary).
-7. Re-run `make test`, `make lint`, or `make ci` as appropriate. All must pass locally before opening a PR.
+7. After implementing changes but before committing, re-run the full tooling suite for your stack—`make test`, `make lint`, `make ci` where present, and any mandatory formatter targets defined in `AGENTS*`. All must pass locally before opening a PR unless the work is explicitly documented as blocked.
 8. Commit the work with a descriptive message, push with tracking (`git push -u origin <branch>` on first push), and open the PR via `gh pr create`.
 9. Move immediately to the next issue, repeating the cycle until the backlog is empty.
 
 ## Testing & Tooling
 
 - Use the `Makefile` targets (`make test`, `make lint`, `make ci`) instead of ad-hoc commands. `make test` runs the Playwright harness headless; `make lint` enforces lint rules; `make ci` mirrors GitHub Actions.
+- Run stack-specific formatters as defined in the relevant `AGENTS*` guides (for example, `go fmt` for Go or any other formatter that is required for that stack); do not introduce new formatters or override stack policies.
 - Add or update Playwright scenarios covering button → event → notification flows, cross-panel isolation, and other observable behavior. Tests are black-box and table-driven.
 - Prefix every CLI command with `timeout -k <N>s -s SIGKILL <N>s <command>`. Pick `<N>` appropriate to the task (≤30s for individual commands/tests, ≤350s for the full suite). No exceptions.
 
@@ -48,7 +49,7 @@ Operational playbook for working in this repository. Use it to coordinate planni
 
 1. `PLAN.md` reflects the final state for the active issue.
 2. `ISSUES.md` entry is marked `[x]` with the resolution note.
-3. `make test`, `make lint`, and `make ci` succeed locally (subject to the timeout rule).
+3. The full tooling suite for the active stack has been run and is passing: at minimum, `make test`, `make lint`, and `make ci` succeed locally (subject to the timeout rule), and any mandatory formatter targets from `AGENTS*` have been applied.
 4. Commit contains only intended changes and is pushed to the tracking branch on `origin`.
 5. PR opened via `gh pr create`, referencing the issue ID.
 6. Provide a short summary plus next steps in the CLI output before moving to the next issue.

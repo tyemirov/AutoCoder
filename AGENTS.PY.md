@@ -60,6 +60,7 @@ Backend guidance for Python code. Follow AGENTS.md for repo-wide policies, docum
 
 ### Testing
 
+- Follows the repo-wide **Testing Philosophy** in `AGENTS.md`: inverted test pyramid, 100% coverage driven by black-box integration/end-to-end scenarios; unit tests are optional implementation guardrails.
 - Use `pytest` with table-driven tests.
 - Isolate side effects with fixtures.
 - Use `tmp_path` for filesystem operations (no pollution).

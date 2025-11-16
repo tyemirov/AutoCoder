@@ -85,6 +85,7 @@ Guidelines for building the browser front end with semantic web components, Alpi
 
 ## Testing & Quality
 
+- Follows the repo-wide **Testing Philosophy** in `AGENTS.md`: inverted test pyramid, 100% coverage driven by black-box integration/end-to-end scenarios.
 - Playwright is the standard browser automation framework; Puppeteer and other harnesses are not allowed.
 - Perform semantic testing of component visibility, accessibility, and payout correctness through Playwright scenarios.
 - `npm test` (or `make test`) runs the Playwright harness headless.

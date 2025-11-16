@@ -23,6 +23,7 @@ Git and GitHub conventions for this repository. Use these rules whenever you cre
 - Never use `git push --force`, `git rebase`, or `git cherry-pick`. History is append-only.
 - If a mistake occurs, fix it with a new commit on top of the existing branch.
 - Commit messages must be descriptive (e.g., “Fix GN-58 editor preview duplication”) so reviewers understand the change at a glance.
+- Do not commit or push changes unless the relevant tests, linters, and formatters have been run and are passing on the current branch, as required by `AGENTS.md` and the process guidance in `NOTES.md` (blocked work must be explicitly documented in `ISSUES.md`).
 
 ## Tracking & Remotes
 

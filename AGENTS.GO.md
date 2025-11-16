@@ -81,6 +81,7 @@ Backend guidance for Go code. Follow AGENTS.md for repo-wide policies, documenta
 
 ### Testing
 
+- Follows the repo-wide **Testing Philosophy** in `AGENTS.md`: inverted test pyramid, 100% coverage driven by black-box integration/end-to-end scenarios; unit tests are optional implementation guardrails.
 - No filesystem pollution.
 - Use `t.TempDir()` for temporary dirs.
 - Dependency injection for I/O.
