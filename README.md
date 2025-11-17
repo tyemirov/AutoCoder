@@ -12,6 +12,10 @@ This repository contains files that can be dropped into a project to improve the
 2. As of 10/26/2025, the sufficiently powerful autonomous agents are [Gemini CLI](https://github.com/google-gemini/gemini-cli), [Codex CLI](https://developers.openai.com/codex/cli/), and [Claude Code](https://github.com/anthropics/claude-code). One or more of these can be used for autonomous coding.
 3. The repository follows standard coding practices, such as maintaining a `.gitignore`, a `CHANGELOG.md`, and a comprehensive `README.md`.
 
+## Code of Conduct
+
+We want this toolkit to welcome contributors from every ecosystem—Hack, PHP, Go, Python, and beyond—so please read [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md), bring your context, and open issues/PRs that share what you plan to change. We encourage linking out to ecosystem-specific tooling and making pull requests even if you are still shaping the idea.
+
 ## Human Flow
 
 1. Add [AGENTS.md](./AGENTS.md), [ISSUES.md](./ISSUES.md), [NOTES.md](./NOTES.md), and [POLICY.md](./POLICY.md) to your repository. Replace angular bracketed placeholders with real values.
