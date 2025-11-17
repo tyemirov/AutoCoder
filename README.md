@@ -28,6 +28,15 @@ This repository contains files that can be dropped into a project to improve the
    Read NOTES.md and work on ISSUES starting with bugs. Work autonomously.
    ```
 
+## Localizing the template
+
+After you drop this toolkit into a project, replace the template placeholders that still refer to AutoCoder with your own repository, purpose, and services:
+
+- `AGENTS.md`: edit the top section so `<Repo/App name>` is your project’s real name and `<App purpose description. What does it do>` summarizes what that repository actually delivers.
+- `ISSUES.md`: replace the `[<ID>-<NUMBER>]` placeholders with your chosen issue-ID prefix/sequence (e.g., `GX-123`) before you start logging work; the sample entries show where to insert real backlog items.
+- `AGENTS.DOCKER.md`: rename `.env.<service>` files to match each service you build (e.g., `.env.api`, `.env.worker`) so the environment config reflects your runtime layout.
+- `AGENTS.GO.md`: when you enable CSP controls, substitute `'nonce-<nonce-value>'` with the nonce your server injects and adjust the `connect-src` endpoints to the real proxies or backends your service uses; those placeholders live in the Security → CSP Template snippets.
+
 ## Personal Observations of Coding Agents
 
 ### Claude Code
@@ -88,4 +97,3 @@ This repository contains files that can be dropped into a project to improve the
     - Effectively, clicking on a card freezes it in the viewport. For example, if I click on a large rendered HTML view, I expect to get the rendered markdown view with the cursor placed at my click, without any movement (since the click point was already in view).
 - [ ] [GN-305] Scrollers are still visible ![scroller screenshot](scroller.png). There should be no scrollers in the markdown view.
 ```
-
