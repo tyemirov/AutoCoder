@@ -1,4 +1,5 @@
-# ISSUES (Append-only Log)
+# ISSUES
+**Append-only section-based log**
 
 Entries record newly discovered requests or changes, with their outcomes. No instructive content lives here. Read @NOTES.md for the process to follow when fixing issues.
 
@@ -13,4 +14,4 @@ Each issue is formatted as `- [ ] [<ID>-<number>]`. When resolved it becomes -` 
 ## Maintenance (400–499)
 
 ## Planning 
-do not work on the issues below, not ready
+**Do not work on these, not ready**
