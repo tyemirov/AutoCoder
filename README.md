@@ -16,6 +16,8 @@ This repository contains files that can be dropped into a project to improve the
 
 We want this toolkit to welcome contributors from every ecosystem—Hack, PHP, Go, Python, and beyond—so please read [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md), bring your context, and open issues/PRs that share what you plan to change. We encourage linking out to ecosystem-specific tooling and making pull requests even if you are still shaping the idea.
 
+Also see [CONTRIBUTING.md](./CONTRIBUTING.md) for the detailed workflow, branching rules, and tooling commands that keep contributions aligned with this repo’s guardrails.
+
 ## Human Flow
 
 1. Add [AGENTS.md](./AGENTS.md), [ISSUES.md](./ISSUES.md), [NOTES.md](./NOTES.md), and [POLICY.md](./POLICY.md) to your repository. Replace angular bracketed placeholders with real values.
@@ -24,6 +26,7 @@ We want this toolkit to welcome contributors from every ecosystem—Hack, PHP, G
    ```shell
    printf "\nPLAN.md\n" >> .gitignore
    ```
+
 3. Decide on a short ID for your repository (e.g., `GX` for GIX or `AW` for Allergy Wheel).
 4. Populate `ISSUES.md` with issues in the format `- [ ] [<ID>-<NUMBER>]`. Describe each issue in sufficient detail for a mid-level engineer to solve.
 5. Run the coding agent and prompt it with:
@@ -31,6 +34,10 @@ We want this toolkit to welcome contributors from every ecosystem—Hack, PHP, G
    ```
    Read NOTES.md and work on ISSUES starting with bugs. Work autonomously.
    ```
+
+## English as high-level code
+
+Capable agents today treat detailed English instructions like a programming language—clarity, intent, and structure determine whether an autonomous coding session succeeds. The files in this repo are therefore written as “high-level code”: they encode policies, workflows, and guardrails that agents execute instead of literal source changes. Framing requirements this way keeps every instruction transparent, reproducible, and reviewable, so agents, reviewers, and future maintainers all understand the expected outcome.
 
 ## Localizing the template
 
@@ -47,43 +54,43 @@ After you drop this toolkit into a project, replace the template placeholders th
 
 **Pros**
 
-* Most responsive and warm personality.
-* Fast execution speed.
+- Most responsive and warm personality.
+- Fast execution speed.
 
 **Cons**
 
-* Coding skills are subpar in both backend and front-end compared to Codex.
+- Coding skills are subpar in both backend and front-end compared to Codex.
 
-*Conclusion* (as of 10/27/2025): use Codex, or create extra guardrails and smaller tasks for Claude.
+_Conclusion_ (as of 10/27/2025): use Codex, or create extra guardrails and smaller tasks for Claude.
 
 ### Gemini CLI
 
 **Pros**
 
-* Very fast.
+- Very fast.
 
 **Cons**
 
-* Does not follow instructions reliably.
-* May perform large, irrevocable changes if left unchecked.
+- Does not follow instructions reliably.
+- May perform large, irrevocable changes if left unchecked.
 
-*Conclusion* (as of 10/27/2025): do not use Gemini CLI; not ready for daily use.
+_Conclusion_ (as of 10/27/2025): do not use Gemini CLI; not ready for daily use.
 
 ### Codex CLI
 
 **Pros**
 
-* Can autonomously work on large tasks.
-* Decent understanding of the code base.
-* Relentless in delivering results.
+- Can autonomously work on large tasks.
+- Decent understanding of the code base.
+- Relentless in delivering results.
 
 **Cons**
 
-* Slow.
-* Account usage runs out faster than stated.
-* Uneven performance across models: the medium model can work well, while the high model may stumble.
+- Slow.
+- Account usage runs out faster than stated.
+- Uneven performance across models: the medium model can work well, while the high model may stumble.
 
-*Conclusion* (as of 10/27/2025): use Codex CLI with the High model through API; treat it as an employee that needs guidance.
+_Conclusion_ (as of 10/27/2025): use Codex CLI with the High model through API; treat it as an employee that needs guidance.
 
 ---
 
@@ -97,7 +104,11 @@ After you drop this toolkit into a project, replace the template placeholders th
 - [ ] [GN-303] Synchronization doesn’t refresh. I added a note on another device, then logged into a computer with an already running session, and the note didn’t appear. In the console, I saw many messages about expired authentication.
 - [ ] [GN-304] Clicking on a note correctly enters edit mode and places the cursor, but unexpectedly yanks the note to the top.
   - **Solutions:**
-    - Center the scroll around the active card. Introduce a notion of an active card (e.g., last selected). When editing ends, the card should stay fixed while others move underneath.  
+    - Center the scroll around the active card. Introduce a notion of an active card (e.g., last selected). When editing ends, the card should stay fixed while others move underneath.
     - Effectively, clicking on a card freezes it in the viewport. For example, if I click on a large rendered HTML view, I expect to get the rendered markdown view with the cursor placed at my click, without any movement (since the click point was already in view).
 - [ ] [GN-305] Scrollers are still visible ![scroller screenshot](scroller.png). There should be no scrollers in the markdown view.
 ```
+
+## License
+
+The project is licensed under the [Business Source License 1.1](./LICENSE), which keeps commercial use restricted until 2026-11-17 and then reverts to MIT; see that file for the contact and change-license details.

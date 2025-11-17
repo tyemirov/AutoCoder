@@ -1,0 +1,28 @@
+Business Source License 1.1
+
+Copyright (c) 2025 AutoCoder Contributors
+
+This work is licensed under the Business Source License 1.1 (“BSL 1.1”). You may not use this work except in compliance with BSL 1.1. By using the work you confirm that you understand and accept the following terms.
+
+1. Definitions
+
+   - “Change Date” means 2026-11-17.
+   - “Change License” means the MIT License (https://opensource.org/licenses/MIT).
+   - “Licensed Work” means the software, documentation, and other material in this repository.
+
+2. Use
+
+- You may reproduce, prepare derivative works, distribute copies, and otherwise use the Licensed Work for non-commercial purposes (for example, personal, academic, research, evaluation, or similar activities) without additional permission, provided you retain the above copyright notice and this license in all copies.
+- Commercial use, including operating a revenue-generating service, product, or offering based on the Licensed Work, is prohibited until the Change Date unless you obtain a commercial license as described below.
+
+3. Commercial licensing
+
+If you would like to use the Licensed Work commercially before the Change Date, email `admin@mprlab.com` with a brief summary of your intended use. The AutoCoder maintainers will respond with the required commercial licensing terms and next steps.
+
+4. Change License
+
+On or after the Change Date, the Licensed Work will be made available under the Change License; at that point, your rights are governed solely by the MIT License without further restrictions from this BSL 1.1.
+
+5. Warranty disclaimer
+
+The Licensed Work is provided “as is”, without warranty of any kind. In no event shall the copyright holders be liable for any claim, damages or other liability arising from, out of or in connection with the Licensed Work or its use.
