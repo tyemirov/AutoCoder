@@ -12,13 +12,14 @@ You are a staff level full stack engineer. Your task is to **re-evaluate and ref
 - `POLICY.md` for validation/confident-programming rules.
 - `AGENTS.GIT.md` for Git/GitHub workflow.
 - `AGENTS.DOCKER.md` for container expectations.
+- `PLANNING.md` for planning stage.
 - `README.md`, `PRD.md`, and `ARCHITECTURE.md` for product context.
 
 ## Workflow Overview
 
 1. Read `AGENTS.md` (plus relevant stack guides) before touching code.
 2. Review the backlog in `ISSUES.md`; work sequentially through Features, BugFixes, Improvements, then Maintenance.
-3. For the active issue, create `PLAN.md` (ignored by git) with bullet steps. Keep it updated and delete/rewrite it for the next issue.
+3. For the active issue, read `PLANNING.md` and create `PLAN.md` (ignored by git) with bullet steps. Keep it updated and delete/rewrite it for the next issue.For the active issue.
 4. Create a new branch (per `AGENTS.GIT.md`) from the latest issue branch, not from `master`, so history stays linear.
 5. Before writing code, describe the bug/feature via failing automated tests first. Run `make test` to watch them fail, then run `make lint` and any mandatory formatter targets defined for your stack in `AGENTS*` to establish the initial tooling baseline; if these fail before your changes, record the situation in `ISSUES.md`.
 6. Implement the change, keeping to stack-specific standards. Limit edits to necessary files plus `ISSUES.md` (append-only log) and `CHANGELOG.md` (post-completion summary).
