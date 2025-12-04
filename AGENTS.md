@@ -16,6 +16,7 @@
 - `AGENTS.md` (this file) defines repo-wide workflow, testing philosophy, and agent behavior; stack-specific AGENTS.* guides refine these rules for each technology.
 - `AGENTS.*.md` files never contradict `AGENTS.md` or `POLICY.md`; if guidance appears inconsistent, defer to `POLICY.md` first, then `AGENTS.md`, and treat the stack guide as a refinement.
 - `NOTES.md` is process-only and must not introduce rules that conflict with `POLICY.md` or any `AGENTS*.md` files.
+- `PLANNING.md` is a guidance to planning stage.
 
 ### Issue Status Terms
 
